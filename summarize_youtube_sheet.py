@@ -14,7 +14,8 @@ openai_client = OpenAI(api_key=api_key)
 
 # ✅ Sheets用認証とクライアント
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("youtube-summary-bot-459503-7fd884497fc7.json", scope)
+google_credential_path = os.getenv("GOOGLE_CREDENTIAL_PATH")
+creds = ServiceAccountCredentials.from_json_keyfile_name(google_credential_path, scope)
 sheet_client = gspread.authorize(creds)
 
 # ✅ 対象シートの読み込み
