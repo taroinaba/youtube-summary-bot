@@ -1,3 +1,4 @@
 # 機密ファイル（GitHubに公開しない）
 .env
 *.json
+venv/
